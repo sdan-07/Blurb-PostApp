@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: sans-serif;
+    color: white;
+    background-color: black;
+  }
+}
+h1{
+ @apply text-3xl font-bold
+}
+
+.inputbox{
+  @apply my-7
+}
