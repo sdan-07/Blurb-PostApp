@@ -74,7 +74,7 @@ const Login = ({ url }) => {
                 value={passwordVal}
                 onChange={(e) => {
                   e.preventDefault();
-                  console.log(e.target.value);
+                  //console.log(e.target.value);
 
                   setPasswordVal(e.target.value);
                 }}
