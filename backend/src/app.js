@@ -16,6 +16,14 @@ app.use(cors({
 app.use(express.json())
 app.use(cookieParser())
 
+//health check route
+app.get('/', (_,res)=>{
+    res.status(200).json({
+        status: "OK",
+        message: "Server is running"
+    })
+});
+
 //api
 app.use('/api/post', postRoutes)
 app.use('/api/auth', authRoutes)
