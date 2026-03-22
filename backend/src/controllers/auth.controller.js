@@ -22,7 +22,12 @@ const registerUser = async (req,res) => {
             expiresIn: '3h'
         })
 
-        res.cookie("token", token, { httpOnly: true, secure: false })
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: "production",
+            sameSite: "none",
+            maxAge: 3 * 60 * 60 * 1000 // 3 hours
+        })
 
         return res.status(201).json({
             message: "User registered succesfully",
@@ -55,7 +60,12 @@ const loginUser = async (req,res) => {
             expiresIn: '3h'
         })
 
-        res.cookie("token", token, { httpOnly: true, secure: false })
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: "production",
+            sameSite: "none",
+            maxAge: 3 * 60 * 60 * 1000 // 3 hours
+        })
         
         return res.status(200).json({
             message: "User logged in succesfully"

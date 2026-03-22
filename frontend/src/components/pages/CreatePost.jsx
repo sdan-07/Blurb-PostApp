@@ -9,7 +9,7 @@ const CreatePost = ({ url, navbar }) => {
     e.preventDefault();
 
     const formData = new FormData(e.target)
-    await axios.post(`${url}/api/post/create-post`, formData)
+    await axios.post(`${url}/api/post/create-post`, formData, { withCredentials: true })
     .then((res)=>{
       console.log("post added");
       nav('/feed')
