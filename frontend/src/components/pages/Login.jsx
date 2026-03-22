@@ -50,7 +50,7 @@ const Login = ({ url }) => {
         <div>
           <form
             onSubmit={HandleSubmit}
-            className="flex border rounded-3xl shadow-amber-400/50 p-8 w-sm md:w-md flex-col gap-4 scale-105 md:scale-110"
+            className="flex border rounded-3xl shadow-amber-400/50 p-8 w-sm md:w-md flex-col gap-4 scale-95 md:scale-110"
           >
             <div>
               <div className="mb-2 block">
