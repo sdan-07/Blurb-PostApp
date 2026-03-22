@@ -2,10 +2,9 @@ const jwt = require('jsonwebtoken')
 
 const verifyToken = (req,res,next) => {
     try{
-        //token exist
+        //check for token exist
         const token = req.cookies.token;
-        //console.log(token);
-        
+
         if(!token)
             return res.status(403).json({message: "User forbidden"})
 

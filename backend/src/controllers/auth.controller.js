@@ -4,7 +4,8 @@ const bcrypt = require('bcryptjs')
 
 const registerUser = async (req,res) => {
     try{
-        const {username, email, password} = req.body
+        const {username, email, password} = req.body;
+
         //password hash
         const hashedPassword = await bcrypt.hash(password, 10)
         let user;
@@ -17,7 +18,9 @@ const registerUser = async (req,res) => {
         //create token
         const token = await jwt.sign({
             id: user._id
-        }, process.env.JWT_SECRET)
+        }, process.env.JWT_SECRET, {
+            expiresIn: '3h'
+        })
 
         res.cookie("token", token, { httpOnly: true, secure: false })
 
@@ -48,7 +51,9 @@ const loginUser = async (req,res) => {
         //create token
         const token = await jwt.sign({
             id: user._id
-        }, process.env.JWT_SECRET)
+        }, process.env.JWT_SECRET,{
+            expiresIn: '3h'
+        })
 
         res.cookie("token", token, { httpOnly: true, secure: false })
         
