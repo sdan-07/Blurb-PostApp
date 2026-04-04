@@ -43,7 +43,7 @@ const App = () => {
       <div className="flex justify-between w-full p-4 md:order-2">
         <div className="w-full flex justify-center">
           {title && (
-            <h1 className="text-center italic my-2 text-4xl!">{title}</h1>
+            <h1 className="text-center italic my-2 text-2xl! sm:text-4xl!">{title}</h1>
           )}
         </div>
         <Dropdown

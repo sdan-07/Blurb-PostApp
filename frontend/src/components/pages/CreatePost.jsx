@@ -25,7 +25,7 @@ const CreatePost = ({ url, navbar }) => {
     <>
       {navbar}
 
-      <section className="create-post-form flex flex-col items-center justify-center h-[85vh] lg:scale-110">
+      <section className="create-post-form flex flex-col items-center justify-center h-[85vh] scale-90 lg:scale-110">
         <div className="h-[70vh] border-2 w-sm rounded-2xl">
           <div className="form-content flex flex-col">
             <form className="p-5" onSubmit={handleSubmit}>

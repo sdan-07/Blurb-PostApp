@@ -29,7 +29,7 @@ const Feed = ({ url, navbar }) => {
     {navbar}
     
     <section className="feed flex flex-col justify-center items-center">
-      <div className=" rounded-2xl flex flex-col justify-center items-center h-screen w-md md:w-2xl">
+      <div className="rounded-2xl flex flex-col justify-center items-center h-screen w-md md:w-2xl scale-95 sm:scale-100">
         <div className="m-12">
           {posts.length === 0 ? CreatePost() : ""}
 
