@@ -16,7 +16,7 @@ const publicPath = path.join(__dirname, "..", "public");
 //middlewares
 app.use(
   cors({
-    origin: process.env.VITE_FRONTEND_URL as string,
+    origin: process.env.CLIENT_URL as string || true,
     methods: ["POST", "GET", "PATCH", "DELETE"],
     credentials: true,
   }),

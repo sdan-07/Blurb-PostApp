@@ -1,7 +1,8 @@
 import axios from 'axios';
+const apiUrl = import.meta.env.VITE_API_URL
 
 const axiosInstance = axios.create({
-  baseURL: 'https://blurb-postapp.onrender.com/api',
+  baseURL:  apiUrl || 'https://blurb-postapp.onrender.com/api',
   withCredentials: true,
 });
 
