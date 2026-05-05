@@ -26,8 +26,8 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
 
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true,
+            sameSite: "none",
             maxAge: 3 * 60 * 60 * 1000 // 3 hours
         })
 
@@ -71,8 +71,8 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true,
+            sameSite: "none",
             maxAge: 3 * 60 * 60 * 1000 // 3 hours
         })
 
@@ -91,7 +91,11 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
 
 export const logoutUser = async (_: Request, res: Response): Promise<void> => {
     try {
-        res.clearCookie("token")
+        res.clearCookie("token", {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none"
+        })
 
         res.status(200).json({
             message: "User logged out successfully"
