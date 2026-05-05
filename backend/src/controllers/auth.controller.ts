@@ -28,6 +28,7 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
             httpOnly: true,
             secure: true,
             sameSite: "none",
+            partitioned: true,
             maxAge: 3 * 60 * 60 * 1000 // 3 hours
         })
 
@@ -73,6 +74,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
             httpOnly: true,
             secure: true,
             sameSite: "none",
+            partitioned: true,
             maxAge: 3 * 60 * 60 * 1000 // 3 hours
         })
 
@@ -94,7 +96,8 @@ export const logoutUser = async (_: Request, res: Response): Promise<void> => {
         res.clearCookie("token", {
             httpOnly: true,
             secure: true,
-            sameSite: "none"
+            sameSite: "none",
+            partitioned: true
         })
 
         res.status(200).json({
